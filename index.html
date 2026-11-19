@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday Mumma 👑 | From Your Daughter With All My Love 🎀</title>
+  
+  <!-- Open Graph Meta Tags for WhatsApp and Social Sharing -->
+  <meta property="og:title" content="Happy Birthday to My Queen, My Mumma 👑🎀">
+  <meta property="og:description" content="To my forever person, my biggest blessing, and the heart of my little world. A heartfelt birthday surprise from your daughter 💖">
+  <meta property="og:image" content="images/img_08_lawn_elegance.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f9e8ed">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Particles Canvas -->
+  <canvas id="sparkleCanvas"></canvas>
+
+  <!-- Ambient Audio Controls -->
+  <div class="audio-control-bar" id="audioControlBar">
+    <button id="musicToggleBtn" class="music-pill" title="Play / Pause Birthday Music">
+      <div class="sound-wave" id="soundWave">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <span id="musicStatusText">Melody: On 🎵</span>
+    </button>
+  </div>
+
+  <!-- ENVELOPE / UNWRAP SURPRISE MODAL -->
+  <div class="entrance-overlay" id="entranceOverlay">
+    <div class="entrance-card">
+      <div class="wax-seal-icon">🎀</div>
+      <div class="envelope-tag">Specially Crafted with Endless Love</div>
+      <h1 class="entrance-title">Happy Birthday Mumma 👑</h1>
+      <p class="entrance-subtitle">A special piece of my heart, sent straight to yours across every mile...</p>
+      
+      <div class="envelope-box" id="envelopeBox" onclick="openBirthdaySurprise()">
+        <div class="envelope-flap"></div>
+        <div class="envelope-letter-peek">
+          <span>💌 To My Queen Mumma</span>
+        </div>
+        <div class="envelope-body">
+          <div class="heart-stamp">💖</div>
+        </div>
+      </div>
+      
+      <button class="open-surprise-btn" id="openSurpriseBtn" onclick="openBirthdaySurprise()">
+        <span>Open Mumma's Birthday Letter 🎀</span>
+        <i class="fa-solid fa-sparkles"></i>
+      </button>
+      <div class="entrance-hint">✨ Turn up your sound for the best experience ✨</div>
+    </div>
+  </div>
+
+  <!-- MAIN WRAPPER -->
+  <div class="page-wrapper" id="mainContent">
+
+    <!-- FLOATING QUICK NAV -->
+    <header class="main-header">
+      <nav class="nav-pill-container">
+        <a href="#letterSection" class="nav-link active"><i class="fa-solid fa-envelope-open-text"></i> <span>Letter</span></a>
+        <a href="#cakeSection" class="nav-link"><i class="fa-solid fa-cake-candles"></i> <span>Cake</span></a>
+        <a href="#gallerySection" class="nav-link"><i class="fa-solid fa-images"></i> <span>Memories</span></a>
+        <a href="#hugSection" class="nav-link"><i class="fa-solid fa-heart"></i> <span>Hug</span></a>
+        <a href="#reasonsSection" class="nav-link"><i class="fa-solid fa-crown"></i> <span>My Queen</span></a>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-ribbon-badge">
+        <span class="ribbon-text">🎀 For My Forever Person 🎀</span>
+      </div>
+
+      <h1 class="hero-title">Happy Birthday, Mumma!</h1>
+      <p class="hero-tagline">My Biggest Blessing & The Heart of My Little World</p>
+
+      <div class="hero-showcase">
+        <div class="royal-photo-frame">
+          <div class="golden-crown-badge">👑</div>
+          <div class="photo-container">
+            <img src="images/img_08_lawn_elegance.jpg" alt="Mumma & Daughter" class="hero-main-img" id="heroPhoto">
+            <div class="photo-glow-ring"></div>
+          </div>
+          <div class="photo-caption-bubble">
+            <i class="fa-solid fa-quote-left quote-ico"></i>
+            <span>"You deserve all the happiness in the universe... Happy Birthday My Queen!" 💫</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-quick-actions">
+        <button class="action-btn-primary" onclick="scrollToLetter()">
+          <i class="fa-solid fa-heart"></i> Read My Letter to You
+        </button>
+        <button class="action-btn-secondary" onclick="scrollToCake()">
+          <i class="fa-solid fa-cake-candles"></i> Cut Your Birthday Cake
+        </button>
+      </div>
+
+      <div class="distance-badge">
+        <i class="fa-solid fa-location-dot"></i> Miles apart today, but connected by every single heartbeat 💕
+      </div>
+    </section>
+
+    <!-- SECTION: THE HEARTFELT LETTER (VERBATIM PROMPT CORE) -->
+    <section class="letter-section" id="letterSection">
+      <div class="section-badge">💌 Straight From Your Daughter's Heart</div>
+      <h2 class="section-title">A Letter For My Mumma</h2>
+      <p class="section-subtitle">Read every line slowly, Mumma... this is everything I feel for you today.</p>
+
+      <div class="letter-parchment-card">
+        <div class="parchment-ribbon-corner top-left">🎀</div>
+        <div class="parchment-ribbon-corner top-right">🎀</div>
+        
+        <div class="wax-seal-badge">
+          <span>👑</span>
+        </div>
+
+        <div class="letter-header">
+          <div class="letter-date">November 19 • Your Special Day</div>
+          <div class="letter-salutation">My Dearest Mumma,</div>
+        </div>
+
+        <div class="letter-content-body">
+          
+          <!-- Exact Paragraph 1 -->
+          <div class="letter-highlight-block block-pink">
+            <div class="block-icon">🎀🥰</div>
+            <p class="verbatim-text">
+              Happy Birthday to my forever person, my mumma, 🎀🥰 my biggest blessing, and the heart of my little world.
+            </p>
+          </div>
+
+          <!-- Exact Paragraph 2 -->
+          <div class="letter-highlight-block block-gold">
+            <div class="block-icon">✨💫</div>
+            <p class="verbatim-text">
+              I wish me waha hoti to sath me celebrate karte, but nevermind next time. I know waha pe koi nahi hai apko special feel karwane wala, I wish I could give you even half of the happiness you bring into my life.
+            </p>
+          </div>
+
+          <!-- Exact Paragraph 3 -->
+          <div class="letter-highlight-block block-peach">
+            <div class="block-icon">💫🫂</div>
+            <p class="verbatim-text">
+              I wish apki smile kabhi fade na ho 💫 . Thank you soo much mumma for making my life feel a little more beautiful just by being in it 🫂👀.
+            </p>
+          </div>
+
+          <!-- Exact Paragraph 4 -->
+          <div class="letter-highlight-block block-lavender">
+            <div class="block-icon">🥹🫠</div>
+            <p class="verbatim-text">
+              And so sorry for every time I hurt u intentionally or not, yaha rehe ke pata chala apki kya value kya hai, I wish I could hug you and wish you jaise hamesha karti thi 🫠, nevermind I misss you soo muchhhh.
+            </p>
+          </div>
+
+          <!-- Exact Paragraph 5 -->
+          <div class="letter-highlight-block block-rose">
+            <div class="block-icon">💖🪄</div>
+            <p class="verbatim-text">
+              Love you endlessly, mumma. You deserve all the happiness in the universe, plz just stay happy for me 🥹🎀💖🪄.
+            </p>
+          </div>
+
+          <!-- Exact Signoff -->
+          <div class="letter-grand-signoff">
+            <div class="queen-crown-large">👑</div>
+            <h3 class="queen-wish-line">Happy Birthday my queen 💋🎀🫂💫👑</h3>
+          </div>
+
+          <!-- Daughter's Signature -->
+          <div class="letter-signature-area">
+            <div class="signature-line">With all my love & infinite hugs,</div>
+            <div class="signature-name">Your Loving Daughter 🎀</div>
+            <div class="signature-title">Forever your little girl ✨</div>
+          </div>
+
+        </div>
+
+        <div class="letter-actions">
+          <button class="btn-voice-read" onclick="playVoiceLetter()">
+            <i class="fa-solid fa-volume-high"></i> <span id="voiceBtnText">Listen to Daughter's Letter 🎙️</span>
+          </button>
+          <button class="btn-heart-letter" onclick="burstLoveConfetti()">
+            <i class="fa-solid fa-heart-pulse"></i> Shower Mumma With Love 💖
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE VIRTUAL CAKE CUTTING -->
+    <section class="cake-section" id="cakeSection">
+      <div class="section-badge">🎂 Make A Wish</div>
+      <h2 class="section-title">Cut Your Birthday Cake, Mumma!</h2>
+      <p class="section-subtitle">Since I can't feed you cake in person today, let's cut this special cake together! 🍰</p>
+
+      <div class="cake-interactive-stage">
+        <div class="cake-instruction-banner" id="cakeInstruction">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> 
+          <span id="instructionText">Step 1: Tap the candles to blow them out & make a secret wish! 🕯️</span>
+        </div>
+
+        <div class="cake-display-wrapper">
+          <!-- The Multi-Tier Custom Cake -->
+          <div class="cake-plate">
+            <div class="cake-tier tier-bottom">
+              <div class="tier-frosting"></div>
+              <div class="tier-decorations">
+                <span class="cake-piping">🌸</span>
+                <span class="cake-piping">🎀</span>
+                <span class="cake-piping">🌸</span>
+                <span class="cake-piping">🎀</span>
+                <span class="cake-piping">🌸</span>
+              </div>
+            </div>
+            
+            <div class="cake-tier tier-top">
+              <div class="tier-frosting"></div>
+              <div class="cake-message-banner">MUMMA 👑</div>
+              <div class="tier-decorations">
+                <span class="cake-piping">🍓</span>
+                <span class="cake-piping">💖</span>
+                <span class="cake-piping">🍓</span>
+              </div>
+            </div>
+
+            <!-- Glowing Candles -->
+            <div class="candles-row" id="candlesRow" onclick="blowCandles()">
+              <div class="candle candle-1">
+                <div class="flame" id="flame1"></div>
+                <div class="smoke" id="smoke1"></div>
+              </div>
+              <div class="candle candle-2">
+                <div class="flame" id="flame2"></div>
+                <div class="smoke" id="smoke2"></div>
+              </div>
+              <div class="candle candle-3">
+                <div class="flame" id="flame3"></div>
+                <div class="smoke" id="smoke3"></div>
+              </div>
+            </div>
+
+            <!-- Knife Animation Element -->
+            <div class="cake-knife" id="cakeKnife">🗡️</div>
+          </div>
+        </div>
+
+        <div class="cake-controls">
+          <button class="cake-btn blow-btn" id="blowBtn" onclick="blowCandles()">
+            <i class="fa-solid fa-wind"></i> 1. Blow the Candles 🕯️
+          </button>
+          <button class="cake-btn cut-btn disabled" id="cutBtn" onclick="cutCake()" disabled>
+            <i class="fa-solid fa-utensils"></i> 2. Cut the Cake 🍰
+          </button>
+          <button class="cake-btn reset-btn" id="resetCakeBtn" onclick="resetCake()">
+            <i class="fa-solid fa-rotate-left"></i> Celebrate Again 🎉
+          </button>
+        </div>
+
+        <!-- Pop-up Cake Wish Message -->
+        <div class="cake-celebration-toast" id="cakeToast">
+          <div class="toast-icon">🎉🎂👑</div>
+          <div class="toast-title">Happy Birthday Mumma!</div>
+          <div class="toast-msg">"May every prayer in your heart be answered, and may your smile brighten the world forever!"</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: MEMORIES PHOTO LANE (ALL 14 REAL IMAGES) -->
+    <section class="gallery-section" id="gallerySection">
+      <div class="section-badge">📸 Our Beautiful Moments</div>
+      <h2 class="section-title">Memories With My Queen</h2>
+      <p class="section-subtitle">Every photograph holds a million laughs, hugs, and memories I hold so close to my heart.</p>
+
+      <!-- Category Filter Pills -->
+      <div class="gallery-filters">
+        <button class="filter-pill active" onclick="filterGallery('all', this)">All Memories (14) 💖</button>
+        <button class="filter-pill" onclick="filterGallery('mother-daughter', this)">Mother & Daughter 👭</button>
+        <button class="filter-pill" onclick="filterGallery('family', this)">Family & Celebrations 👨‍👩‍👧‍👦</button>
+        <button class="filter-pill" onclick="filterGallery('cherished', this)">Cherished Milestones 🌟</button>
+      </div>
+
+      <!-- Photos Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- 1. Puja Blessing -->
+        <div class="memory-card" data-category="mother-daughter cherished" onclick="openLightbox(0)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_01_puja_blessing.jpg" alt="Seeking blessings together" loading="lazy">
+            <span class="memory-tag">Blessings 🌸</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 0)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-0">12</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Seeking Blessings Together</h4>
+            <p class="memory-caption">"My biggest blessing in this world is having you as my mumma. You are my safe place."</p>
+          </div>
+        </div>
+
+        <!-- 2. Family Smile -->
+        <div class="memory-card" data-category="family" onclick="openLightbox(1)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_02_family_smile.jpg" alt="Family smile with little brother" loading="lazy">
+            <span class="memory-tag">Our Family 👨‍👩‍👧‍👦</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 1)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-1">15</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Our Little World</h4>
+            <p class="memory-caption">"With your love, our entire home is filled with warmth, smiles, and pure blessings."</p>
+          </div>
+        </div>
+
+        <!-- 3. Traditional Glow -->
+        <div class="memory-card" data-category="mother-daughter" onclick="openLightbox(2)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_03_traditional_duo.jpg" alt="Twinning in traditional sarees" loading="lazy">
+            <span class="memory-tag">Twinning 🎀</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 2)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-2">18</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Traditional Elegance</h4>
+            <p class="memory-caption">"Everyone says I get my glow from you! You look so graceful in every single frame."</p>
+          </div>
+        </div>
+
+        <!-- 4. Growing Up -->
+        <div class="memory-card" data-category="mother-daughter cherished" onclick="openLightbox(3)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_04_growing_up.jpg" alt="Growing up with Mumma" loading="lazy">
+            <span class="memory-tag">Through the Years ⏳</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 3)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-3">20</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Growing Up In Your Arms</h4>
+            <p class="memory-caption">"From holding your hand as a little girl to today... you've always been my guiding light."</p>
+          </div>
+        </div>
+
+        <!-- 5. Cafe Celebration -->
+        <div class="memory-card" data-category="family cherished" onclick="openLightbox(4)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_05_cafe_celebration.jpg" alt="Cafe birthday celebration" loading="lazy">
+            <span class="memory-tag">Celebrations 🎂</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 4)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-4">16</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Sweet Moments & Fairy Lights</h4>
+            <p class="memory-caption">"Late night treats, glowing lights, and laughing together with cake — missing this so much!"</p>
+          </div>
+        </div>
+
+        <!-- 6. Proud School Day -->
+        <div class="memory-card" data-category="cherished mother-daughter" onclick="openLightbox(5)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_06_proud_school_day.jpg" alt="Literary Minister school ceremony" loading="lazy">
+            <span class="memory-tag">Proud Mumma 🏅</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 5)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-5">25</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">My Biggest Cheerleader</h4>
+            <p class="memory-caption">"Every single achievement I ever earned is yours first. Your proud smile is my greatest reward."</p>
+          </div>
+        </div>
+
+        <!-- 7. Swing Festive -->
+        <div class="memory-card" data-category="family" onclick="openLightbox(6)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_07_swing_festive.jpg" alt="Festive swing moments" loading="lazy">
+            <span class="memory-tag">Festive Joy 🪔</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 6)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-6">19</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Festivals & Warm Swings</h4>
+            <p class="memory-caption">"Festivals are only special because you make them so magical with your love and warmth."</p>
+          </div>
+        </div>
+
+        <!-- 8. Lawn Elegance -->
+        <div class="memory-card" data-category="mother-daughter" onclick="openLightbox(7)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_08_lawn_elegance.jpg" alt="Mumma & Daughter in ethnic wear" loading="lazy">
+            <span class="memory-tag">My Queen 👑</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 7)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-7">30</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Grace, Love & Beauty</h4>
+            <p class="memory-caption">"You look like absolute royalty here. My queen, today and every single day."</p>
+          </div>
+        </div>
+
+        <!-- 9. Garden Vacation -->
+        <div class="memory-card" data-category="mother-daughter" onclick="openLightbox(8)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_09_garden_vacation.jpg" alt="Holding hands in the garden" loading="lazy">
+            <span class="memory-tag">Hand In Hand 🌿</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 8)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-8">17</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Blossoms & Holding Hands</h4>
+            <p class="memory-caption">"Holding your hand gives me more strength than anything else in the world."</p>
+          </div>
+        </div>
+
+        <!-- 10. Cozy Couch -->
+        <div class="memory-card" data-category="mother-daughter" onclick="openLightbox(9)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_10_cozy_couch.jpg" alt="Cozy couch smiles" loading="lazy">
+            <span class="memory-tag">Casual Smiles ☕</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 9)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-9">14</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">The Everyday Magic</h4>
+            <p class="memory-caption">"Just sitting next to you on the couch talking about everything and nothing — I miss home so much."</p>
+          </div>
+        </div>
+
+        <!-- 11. Home Portrait -->
+        <div class="memory-card" data-category="mother-daughter" onclick="openLightbox(10)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_11_home_portrait.jpg" alt="Home smiles together" loading="lazy">
+            <span class="memory-tag">Home Sweet Home 🏡</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 10)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-10">13</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Pure Happiness</h4>
+            <p class="memory-caption">"Your presence makes any room feel like paradise. Thank you for making my life beautiful."</p>
+          </div>
+        </div>
+
+        <!-- 12. Admiration Night -->
+        <div class="memory-card" data-category="mother-daughter cherished" onclick="openLightbox(11)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_12_admiration_night.jpg" alt="Daughter looking lovingly at Mumma" loading="lazy">
+            <span class="memory-tag">Adoring You ✨</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 11)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-11">28</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">The Way I Look At You</h4>
+            <p class="memory-caption">"This picture says everything my words can't — you are my role model, my best friend, and my whole world."</p>
+          </div>
+        </div>
+
+        <!-- 13. Playful Peace -->
+        <div class="memory-card" data-category="mother-daughter" onclick="openLightbox(12)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_13_playful_peace.jpg" alt="Playful selfie with peace signs" loading="lazy">
+            <span class="memory-tag">Forever Silly ✌️</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 12)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-12">21</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">Forever Your Silly Girl</h4>
+            <p class="memory-caption">"No matter how old I grow, I will always be your dramatic, goofy daughter making you laugh!"</p>
+          </div>
+        </div>
+
+        <!-- 14. Warm Hug -->
+        <div class="memory-card" data-category="mother-daughter cherished" onclick="openLightbox(13)">
+          <div class="memory-img-wrapper">
+            <img src="images/img_14_warm_hug.jpg" alt="Warm loving hug" loading="lazy">
+            <span class="memory-tag">Warmest Hug 🫂</span>
+            <button class="heart-react-btn" onclick="likePhoto(event, 13)" title="Love this photo">
+              <i class="fa-solid fa-heart"></i> <span class="like-count" id="like-13">35</span>
+            </button>
+          </div>
+          <div class="memory-info">
+            <h4 class="memory-title">My Safest Shelter</h4>
+            <p class="memory-caption">"I wish I could hug you right now just like this... sending you the warmest, tightest hug across the miles!"</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+      <button class="lightbox-close" onclick="closeLightboxDirect()">&times;</button>
+      <button class="lightbox-nav prev-btn" onclick="changeLightboxSlide(-1)">&#10094;</button>
+      <button class="lightbox-nav next-btn" onclick="changeLightboxSlide(1)">&#10095;</button>
+      
+      <div class="lightbox-content" onclick="event.stopPropagation()">
+        <img src="" id="lightboxImg" alt="Enlarged Memory">
+        <div class="lightbox-caption-box">
+          <h3 id="lightboxTitle"></h3>
+          <p id="lightboxCaption"></p>
+          <div class="lightbox-footer">
+            <span id="lightboxIndex"></span>
+            <button class="lightbox-heart" onclick="likeCurrentPhoto()">
+              <i class="fa-solid fa-heart"></i> <span id="lightboxLikeCount"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: INTERACTIVE VIRTUAL HUG MACHINE -->
+    <section class="hug-section" id="hugSection">
+      <div class="section-badge">🫂 Distance Means Nothing</div>
+      <h2 class="section-title">Send a Warm Tight Hug to Your Daughter</h2>
+      <p class="section-subtitle">Press and hold the heart below to feel the warmth of my hug reach you across the miles!</p>
+
+      <div class="hug-machine-card">
+        <div class="hug-orb-wrapper">
+          <div class="hug-pulse-ring ring-1"></div>
+          <div class="hug-pulse-ring ring-2"></div>
+          <div class="hug-pulse-ring ring-3"></div>
+          <div class="hug-trigger-btn" id="hugTriggerBtn" 
+               onmousedown="startHug()" onmouseup="endHug()" 
+               ontouchstart="startHug(event)" ontouchend="endHug(event)">
+            <i class="fa-solid fa-heart" id="hugHeartIcon"></i>
+            <span class="hug-label" id="hugBtnLabel">HOLD FOR HUG</span>
+          </div>
+        </div>
+
+        <div class="hug-meter-wrapper">
+          <div class="hug-meter-fill" id="hugMeterFill"></div>
+        </div>
+
+        <div class="hug-status-text" id="hugStatusText">
+          Hold down for 3 seconds to send a super tight Mumma-Daughter hug! 💖
+        </div>
+
+        <div class="hug-delivered-banner" id="hugDeliveredBanner">
+          <div class="delivered-icon">🤗✨🎀</div>
+          <h3>HUG DELIVERED!</h3>
+          <p>"Your daughter is hugging you so tight right now. Close your eyes and feel it, Mumma! You are deeply loved."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: REASONS WHY YOU ARE MY QUEEN -->
+    <section class="reasons-section" id="reasonsSection">
+      <div class="section-badge">👑 Mumma's Superpowers</div>
+      <h2 class="section-title">Why You Are My Forever Person</h2>
+      <p class="section-subtitle">A few of the endless reasons why you mean everything to me...</p>
+
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-icon">💫</div>
+          <h3>Your Unstoppable Smile</h3>
+          <p>"Your smile is the brightest thing in our home. I wish apki smile kabhi fade na ho, ever!"</p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">🤍</div>
+          <h3>Your Selfless Sacrifices</h3>
+          <p>"You always put everyone else before yourself. You deserve all the happiness in the universe."</p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">🫂</div>
+          <h3>Hugs That Heal Everything</h3>
+          <p>"No medicine or therapy can ever match the magic of resting my head on your shoulder."</p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">🪄</div>
+          <h3>My Biggest Blessing</h3>
+          <p>"Yaha rehe ke pata chala apki kya value kya hai... you made my life beautiful just by existing."</p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">🎀</div>
+          <h3>My Forever Cheerleader</h3>
+          <p>"From school ceremonies to life's biggest tests, your belief in me turned dreams into reality."</p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">👑</div>
+          <h3>The Queen of My Heart</h3>
+          <p>"Unshakable grace, timeless beauty, and a golden heart — nobody compares to you, Mumma."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: A DAUGHTER'S PROMISES TO MUMMA -->
+    <section class="promises-section" id="promisesSection">
+      <div class="section-badge">🤞 A Daughter's Word</div>
+      <h2 class="section-title">A Daughter's Promises To You</h2>
+      <p class="section-subtitle">A few unbreakable promises on your special day...</p>
+
+      <div class="promises-list">
+        <div class="promise-item">
+          <div class="promise-check">🌸</div>
+          <div class="promise-text">
+            <strong>Next Time We Celebrate Together:</strong>
+            <span>"Agli baar pakka sath me celebrate karenge, with cake, hugs, and endless chatter!"</span>
+          </div>
+        </div>
+
+        <div class="promise-item">
+          <div class="promise-check">🌸</div>
+          <div class="promise-text">
+            <strong>To Always Make You Proud:</strong>
+            <span>"I promise to work hard, stand tall, and make you beam with pride in every step."</span>
+          </div>
+        </div>
+
+        <div class="promise-item">
+          <div class="promise-check">🌸</div>
+          <div class="promise-text">
+            <strong>To Always Value You:</strong>
+            <span>"Distance taught me what you mean to me. I will cherish every conversation and call."</span>
+          </div>
+        </div>
+
+        <div class="promise-item">
+          <div class="promise-check">🌸</div>
+          <div class="promise-text">
+            <strong>To Keep You Smiling:</strong>
+            <span>"Plz just stay happy for me, Mumma — your joy is my greatest source of energy!"</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: DAILY REASON TO SMILE (LOVE NOTE JAR) -->
+    <section class="jar-section" id="jarSection">
+      <div class="section-badge">✨ Daily Dose of Love</div>
+      <h2 class="section-title">Mumma's Love Note Jar</h2>
+      <p class="section-subtitle">Whenever you are missing your daughter or need a little cheering up, tap the jar!</p>
+
+      <div class="jar-container">
+        <div class="jar-graphic" onclick="pickLoveNote()">
+          <div class="jar-lid"></div>
+          <div class="jar-glass">
+            <span class="paper-slip slip-1">💌</span>
+            <span class="paper-slip slip-2">💖</span>
+            <span class="paper-slip slip-3">✨</span>
+            <span class="paper-slip slip-4">🎀</span>
+            <div class="jar-label">Daughter's Love Notes 💌</div>
+          </div>
+        </div>
+
+        <button class="jar-pick-btn" onclick="pickLoveNote()">
+          <i class="fa-solid fa-gift"></i> Pick a Note From Your Daughter ✨
+        </button>
+
+        <div class="note-display-card" id="noteDisplayCard">
+          <div class="note-quote-icon">“</div>
+          <p class="note-text" id="noteText">Tap the jar or button above to pick a sweet note from your daughter!</p>
+          <div class="note-signature">— Your Loving Daughter 💕</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SEND LOVE BACK TO YOUR DAUGHTER ON WHATSAPP -->
+    <section class="whatsapp-reply-section">
+      <div class="whatsapp-card">
+        <div class="wa-icon-large">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <h3 class="wa-title">Send a Hug Back to Your Daughter 💌</h3>
+        <p class="wa-desc">Made your day a little brighter? Send your daughter a sweet message directly on WhatsApp!</p>
+        
+        <a href="https://api.whatsapp.com/send?text=Beta%2C%20I%20saw%20your%20birthday%20surprise%20website!%20%F0%9F%A5%BA%E2%9D%A4%EF%B8%8F%20Tera%20letter%20aur%20photos%20dekh%20kar%20meri%20aankhein%20bhar%20aayi.%20Thank%20you%20so%20much%20for%20making%20me%20feel%20so%20special%20today!%20I%20miss%20you%20so%20much%20and%20love%20you%20endlessly%20my%20baccha%20%F0%9F%8E%80%F0%9F%91%91%E2%9C%A8" 
+           target="_blank" class="wa-action-btn">
+          <i class="fa-brands fa-whatsapp"></i> Send Love Back to Your Daughter 💬
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="footer-bow">🎀</div>
+      <h3 class="footer-title">Happy Birthday Mumma, My Queen 👑</h3>
+      <p class="footer-quote">"You are my forever person, today, tomorrow, and for all of time."</p>
+      <div class="footer-creds">
+        <span>Crafted with endless love & cheer by <strong>your daughter</strong> for the best Mumma in the universe.</span>
+      </div>
+      <div class="footer-heart">❤️ 🎀 👑 💫 🪄</div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

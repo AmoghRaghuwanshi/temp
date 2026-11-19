@@ -1,0 +1,9 @@
+# Ignore duplicate raw WhatsApp upload folder since all images are in images/
+WhatsApp Unknown*/
+
+# Ignore verification / temp scripts
+verify_content.py
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
